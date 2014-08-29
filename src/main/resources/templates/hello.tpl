@@ -11,5 +11,6 @@ html {
 				li("$it".toUpperCase())
 			}
 		}
+		p(messages.get("note"))
 	}
 }
