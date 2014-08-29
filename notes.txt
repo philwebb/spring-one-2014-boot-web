@@ -1,0 +1,6 @@
+We need https://addons.mozilla.org/en-US/firefox/addon/empty-cache-button/
+
+- Start with the empty project
+- Add index.html  note that you can get to it using http://localhost:8080/index.html and also at http://localhost:8080/
+- add favicon.ico (clear the cache)
+- Add a webjar
