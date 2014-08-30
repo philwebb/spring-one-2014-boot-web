@@ -63,6 +63,28 @@ TemplateAvailabilityProvider + ViewResolver
 -- DEMO GSP
 
 
+## i8n
+
+spring.mvc.locale=
+spring.mvc.date-format
+
+## Rest Service
+
+
+ByteArrayHttpMessageConverter
+StringHttpMessageConverter
+ResourceHttpMessageConverter
+SourceHttpMessageConverter
+AllEncompassingFormHttpMessageConverter
+AtomFeedHttpMessageConverter
+RssChannelHttpMessageConverter
+MappingJackson2XmlHttpMessageConverter
+Jaxb2RootElementHttpMessageConverter
+MappingJackson2HttpMessageConverter
+GsonHttpMessageConverter
+
+
+
 
 
 
