@@ -1,0 +1,17 @@
+
+[source,indent=0]
+----
+	$ ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -n 1
+----
+
+[source,indent=0]
+----
+	$ docker build -t springone/apache-proxy .
+	$ docker run -i -d -p 8081:80 -p 8082:443 -e DOCKER_HOST=$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -n 1) springone/apache-proxy
+----
+
+curl localhost:8081
+curl -k localhost:8082
+
+curl $(boot2docker ip 2>/dev/null):8081
+curl -k $(boot2docker ip 2>/dev/null):8082
