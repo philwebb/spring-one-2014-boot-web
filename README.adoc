@@ -13,7 +13,7 @@ want to go back to a particular point in time.
 === Credits
 This demonstration uses CSS and Javascript from the
 http://tympanus.net/codrops/2013/04/30/text-opening-sequence-with-css-animations/[``Text Opening Sequence with CSS
-Animations''] article by https://twitter.com/crnacura[Mary Lou]. It also uses Jar from
+Animations''] article by https://twitter.com/crnacura[Mary Lou]. It also uses Jars from
 the http://webjars.org[webjars] project.
 
 
@@ -33,7 +33,12 @@ Once build code can be run using `java -jar`:
 	$ java -jar target/spring-one-boot-web-0.0.1-SNAPSHOT.jar
 ----
 
-In addition, if you want to run the Apache HTTP SSL demo you will need docker.
+There are a couple of Firefox plugins that also help:
+* https://addons.mozilla.org/en-US/firefox/addon/empty-cache-button/
+* https://github.com/nohamelin/simple-locale-switcher
+
+In addition, if you want to run the Apache HTTP SSL demo you will need docker (see
+instructions below).
 
 
 === Demos
@@ -49,7 +54,7 @@ wro4j can be used to process a `less` css file.
 
 ==== Dynamic Content
 The `/hello/{name}` endpoint demonstrates how dynamic content can be created using Groovy
-templates. It also shows internationalization using springs `MessageSource` interface.
+templates. It also shows internationalization using Spring's `MessageSource` interface.
 
 The `/convert` endpoint shows how a custom `HttpMessageConverter` can be used. Notice that
 `ExampleRestController` returns a list, which is converted by `ListHttpMessageConverter`.
@@ -110,3 +115,4 @@ or if you're on a mac using `boot2docker`:
 
 This time you should see a different IP address and the second command should report a
 `https://` address.
+
