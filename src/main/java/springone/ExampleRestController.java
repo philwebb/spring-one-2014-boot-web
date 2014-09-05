@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ExampleRestController {
 
-	@RequestMapping("/rest")
+	@RequestMapping("/convert")
 	public List<String> rest() {
 		return Arrays.asList("Dave", "Andy", "Stephane", "Christian", "Phil");
 	}
