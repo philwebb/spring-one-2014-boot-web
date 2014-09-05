@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.0.BUILD-SNAPSHOT</version>
+		<version>1.2.0.M1</version>
 	</parent>
 	<groupId>io.spring.springone.bootweb</groupId>
 	<artifactId>spring-one-boot-web</artifactId>
@@ -75,14 +75,14 @@
 	</build>
 	<repositories>
 		<repository>
-			<id>spring-snapshot</id>
-			<url>http://repo.springsource.org/libs-snapshot-local</url>
+			<id>spring-milestone</id>
+			<url>http://repo.springsource.org/libs-milestone-local</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>spring-snapshot</id>
-			<url>http://repo.springsource.org/libs-snapshot-local</url>
+			<id>spring-milestone</id>
+			<url>http://repo.springsource.org/libs-milestone-local</url>
 		</pluginRepository>
 	</pluginRepositories>
 </project>

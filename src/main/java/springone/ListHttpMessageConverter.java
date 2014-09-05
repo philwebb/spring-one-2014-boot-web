@@ -16,6 +16,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class ListHttpMessageConverter extends AbstractHttpMessageConverter<List<String>> {
 
+	private static final String BEFORE = "</div></div><script>$(document).ready(function() {$(\".os-phrases > h2\")."
+			+ "lettering('words').children(\"span\").lettering().children(\"span\")."
+			+ "lettering();})</script></body></html>";
+
+	private static final String PREFIX = "<!DOCTYPE html><html lang=\"en\"><head>"
+			+ "<title>SpringOne 2014</title>"
+			+ "<script src=\"/webjars/jquery/2.1.1/jquery.js\"></script>"
+			+ "<script src=\"/js/jquery.lettering.js\"></script>"
+			+ "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/page.css\"/></head>"
+			+ "<body><div class=\"container\"><div class=\"os-phrases\">";
+
 	@Override
 	protected boolean supports(Class<?> clazz) {
 		return List.class.isAssignableFrom(clazz);
@@ -37,11 +48,11 @@ public class ListHttpMessageConverter extends AbstractHttpMessageConverter<List<
 	protected void writeInternal(List<String> t, HttpOutputMessage outputMessage)
 			throws IOException, HttpMessageNotWritableException {
 		PrintWriter out = new PrintWriter(outputMessage.getBody());
-		out.write("<html><body><ul>");
+		out.write(PREFIX);
 		for (String string : t) {
-			out.write("<li>"+string+"</li>");
+			out.write("<h2>" + string + "</h2>");
 		}
-		out.write("</body></html");
+		out.write(BEFORE);
 		out.flush();
 	}
 

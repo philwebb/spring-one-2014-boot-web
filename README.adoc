@@ -1,0 +1,20 @@
+http://tympanus.net/codrops/2013/04/30/text-opening-sequence-with-css-animations/
+
+[source,indent=0]
+----
+	$ docker build -t springone/httpd-proxy .
+
+	$ export TOMCAT_HOST=$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -n 1)
+	$ echo $TOMCAT_HOST
+
+	$ docker run -i -d -p 8081:80 -p 8082:443 -e TOMCAT_HOST springone/httpd-proxy
+----
+
+curl http://127.0.0.1:8080/whoami
+curl -k https://127.0.0.1:8080/whoami
+
+curl http://127.0.0.1:8081/whoami
+curl -k http://127.0.0.1:8082/whoami
+
+curl http://$(boot2docker ip 2>/dev/null):8081/whoami
+curl -k https://$(boot2docker ip 2>/dev/null):8082/whoami

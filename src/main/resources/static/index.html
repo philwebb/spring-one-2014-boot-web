@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Spring One</title>
-	<script src="/webjars/jquery/2.1.1/jquery.js">
-	</script>
-	<link rel="stylesheet" type="text/css" href="wro.css"/>
-</head>
-<body>
-	<h1>Hello World!</h1>
-	<script type="text/javascript">
-		$('h1').css({"color":"red"});
-	</script>
-</body>
+<html lang="en">
+	<head>
+		<title>SpringOne 2014</title>
+		<script src="/webjars/jquery/2.1.1/jquery.js"></script>
+		<script src="/js/jquery.lettering.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/page.css"/>
+		<link rel="stylesheet" type="text/css" href="wro.css"/>
+	</head>
+	<body>
+		<h1>Hello friends</h1>
+		<div class="container">
+			<div class="os-phrases">
+				<h2>Spring Boot</h2>
+				<h2>Production ready</h2>
+				<h2>Convention over configuration</h2>
+				<h2>SpringOne 2014 Dallas</h2>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$(".os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering();
+			})
+		</script>
+	</body>
+</html>
