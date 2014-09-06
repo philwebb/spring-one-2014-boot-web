@@ -32,7 +32,8 @@ public class ExampleWebController {
 	public String ip(HttpServletRequest request) {
 		Enumeration<String> headerNames = request.getHeaderNames();
 		while(headerNames.hasMoreElements()) {
-			System.out.println(request.getHeader(headerNames.nextElement()));
+			String h = headerNames.nextElement();
+			System.out.println(h + "=" + request.getHeader(h));
 		}
 
 		return request.getScheme() + "://" + request.getRemoteAddr() + ":"
