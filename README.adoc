@@ -80,7 +80,7 @@ most machines:
 
 [source,indent=0]
 ----
-	$ export TOMCAT_HOST=$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -n 1)
+	$ export TOMCAT_HOST=$(ifconfig | sed -En '/docker/,+2d;s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -n 1)
 	$ docker run -i -d -p 8081:80 -p 8082:443 -e TOMCAT_HOST springone/httpd-proxy
 ----
 

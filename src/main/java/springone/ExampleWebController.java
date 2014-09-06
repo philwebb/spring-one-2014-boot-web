@@ -1,6 +1,7 @@
 package springone;
 
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +30,11 @@ public class ExampleWebController {
 	@RequestMapping("/whoami")
 	@ResponseBody
 	public String ip(HttpServletRequest request) {
+		Enumeration<String> headerNames = request.getHeaderNames();
+		while(headerNames.hasMoreElements()) {
+			System.out.println(request.getHeader(headerNames.nextElement()));
+		}
+
 		return request.getScheme() + "://" + request.getRemoteAddr() + ":"
 				+ request.getServerPort() +"\n";
 	}
